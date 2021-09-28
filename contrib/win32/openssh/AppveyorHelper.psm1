@@ -266,7 +266,7 @@ function Publish-Artifact
     Write-Host -ForegroundColor Yellow "Publishing project artifacts"
     [System.Collections.ArrayList] $artifacts = new-object System.Collections.ArrayList
 	
-	Get-ChildItem -Force
+	Get-ChildItem -Force "C:\projects\openssh-portable\contrib\win32\openssh\bin"
     
     # Get the build.log file for each build configuration        
     Add-BuildLog -artifacts $artifacts -buildLog (Get-BuildLogFile -root $repoRoot.FullName -Configuration Release -NativeHostArch x64)
