@@ -267,6 +267,8 @@ function Publish-Artifact
     [System.Collections.ArrayList] $artifacts = new-object System.Collections.ArrayList
 	
 	Get-ChildItem -Force "C:\projects\openssh-portable\contrib\win32\openssh"
+	Get-ChildItem -Force "C:\projects\openssh-portable\contrib\win32\openssh\Win32"
+	Get-ChildItem -Force "C:\projects\openssh-portable\contrib\win32\openssh\x64"
     
     # Get the build.log file for each build configuration        
     Add-BuildLog -artifacts $artifacts -buildLog (Get-BuildLogFile -root $repoRoot.FullName -Configuration Release -NativeHostArch x64)
